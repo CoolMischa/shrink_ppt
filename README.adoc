@@ -1,0 +1,26 @@
+# shrink_ppt
+:author: Mischa Soujon
+:email: mischa@soujon-net.de
+:date: 2020-11-15T10:12:42.564Z
+:toc:
+
+Short bash script to shrink the images inside a PowerPoint presentation (nearly) without loss of quality.
+
+## Prerequisites
+
+The main resizing is based on functions of link:https://imagemagick.org[ImageMagick] and some math you need to install:
+
+- link:https://imagemagick.org/script/download.php[ImageMagick - Download]
+- GNU Basic Calculator **bc** (see: link:https://man7.org/linux/man-pages/man1/bc.1p.html[bc man page])
+
+## Operation
+
+The script take the first argument as PowerPoint presentation in pptx format to shrink.
+
+It creates the folders:
+
+extraction:: This folder contains the unzip presentation
+toshrink:: The images (jpeg, png, gif) to shrink which are found by search in ``extraction/ppt/media``` on files greater than 250 kilobyte
+resized:: The resized images
+
+After resizing the references in the presentation are updated and the shrinked presentation will be zip as ```shrinked_```_<OriginalPresentationName>_.pptx
