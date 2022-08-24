@@ -6,6 +6,11 @@
 
 Short bash script to shrink the images inside a PowerPoint presentation (nearly) without loss of quality.
 
+## PITFALLS
+The script is a quick-and-dirty implementation and everything else than production ready!
+
+Please use it onw you own risk and be sure to have a backup of you original presentation.
+
 ## Prerequisites
 
 The main resizing is based on functions of link:https://imagemagick.org[ImageMagick] and some math you need to install:
@@ -22,7 +27,10 @@ The script take the first argument as PowerPoint presentation in pptx format to 
 It creates the folders:
 
 extraction:: This folder contains the unzip presentation
-toshrink:: The images (jpeg, png, gif) to shrink which are found by search in ``extraction/ppt/media``` on files greater than 250 kilobyte
+img:: The images (jpeg, png, gif) to shrink which are found by search in ``extraction/ppt/media``` on files greater than 250 kilobyte
+emf:: The embeded images (Windows Embeded Metafiles, emf) to shrink which are found by search in ``extraction/ppt/media``` on files greater than 250 kilobyte
 resized:: The resized images
 
-After resizing the references in the presentation are updated and the shrinked presentation will be zip as ```shrinked_```_<OriginalPresentationName>_.pptx
+Normal images will be resized with imagemagick and if possible (no opacity) converted to JPEG images. The emf-files will be first converted to OpenOffice documents and then the PNG images extracted. If such an image is greater in size then 250k it will be resized and converted as above described.
+
+After resizing the references in the presentation are updated and the shrunk presentation will be zip as ```shrunk_```_<OriginalPresentationName>_.pptx

@@ -3,7 +3,7 @@ resized/
 emf/
 img/
 
-shrinked_*.pptx
+*.pptx
 
 # old versions
 toshrink/
