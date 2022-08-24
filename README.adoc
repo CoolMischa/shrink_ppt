@@ -13,6 +13,8 @@ The main resizing is based on functions of link:https://imagemagick.org[ImageMag
 - link:https://imagemagick.org/script/download.php[ImageMagick - Download]
 - GNU Basic Calculator **bc** (see: link:https://man7.org/linux/man-pages/man1/bc.1p.html[bc man page])
 
+If you have LibreOffice installed, also EMF/WMF images will be resized. Make sure the ```soffice``` is in your path. On a Mac OS normally you will find the application in ```/Applications/LibreOffice.app/Contents/MacOS/```.
+
 ## Operation
 
 The script take the first argument as PowerPoint presentation in pptx format to shrink.

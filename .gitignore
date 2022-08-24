@@ -1,5 +1,10 @@
-*.pptx
+extraction/
+resized/
+emf/
+img/
 
-extraction/*
-toshrink/*
-resized/*
+shrinked_*.pptx
+
+# old versions
+toshrink/
+toshrinkemf/
